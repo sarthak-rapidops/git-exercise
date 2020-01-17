@@ -1,0 +1,96 @@
+1.
+git clone
+git remote add origin url
+git push origin master
+
+2.
+git checkout -b dev
+git push origin dev
+
+3.
+git checkout dev
+git checkout -b branch1
+touch b1.txt
+git add b1.txt
+git commit -m "commit"
+git push origin branch1
+
+git checkout dev
+git checkout -b branch2
+touch b2.txt
+git add b2.txt
+git commit -m "commit"
+git push origin branch2
+
+4.
+
+git checkout branch1
+nano b1.txt
+git add b1.txt
+git commit -m "commit"
+git push origin branch1
+
+git checkout branch2
+nano b2.txt
+git add b2.txt
+git commit -m "commit"
+git push origin branch2
+
+5.
+git commit --amend
+
+6.
+git pull origin branch1
+git push origin branch1
+
+7.
+git checkout dev
+git merge branch1 branch2
+
+8.
+git checkout branch1
+nano b1.txt(change the file)
+git stash
+git checkout branch2
+nano b2.txt
+git add b2.txt
+git commit -m "file is changed"
+git checkout branch1
+git stash pop
+
+9.
+ a).
+	git checkout dev
+	git branch feature1
+	git branch feature2
+
+ b).
+	git checkout feature1
+	touch fe1.txt
+	git add fe1.txt 
+	git comit -m "feature 1 commit"
+	git checkout feature2
+	touch fe2.txt
+	git add fe2.txt 
+	git commit -m "feature 2 commit"
+c).
+	git checkout feature1
+	git push origin feature1
+d).
+	git checkout feature2
+	git pull origin feature1
+e).
+	git checkout dev
+	git merge feature1
+f).
+	git pull origin dev
+g).
+	git push origin feature2
+h).
+	git checkout feature2
+	touch dev1.txt
+	git dev1.txt
+	git commit -m "rebasing"
+	git checkout dev
+	git rebase feature2
+	git merge feature2
